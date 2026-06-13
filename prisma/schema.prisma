@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id        String   @id @default(cuid())
+  name      String
+  baseUrl   String
+  createdAt DateTime @default(now())
+  flows     Flow[]
+  runs      Run[]
+}
+
+model Flow {
+  id          String   @id @default(cuid())
+  projectId   String
+  name        String
+  description String?
+  priority    String   @default("medium")
+  steps       Json
+  scriptPath  String?
+  createdAt   DateTime @default(now())
+  project     Project  @relation(fields: [projectId], references: [id])
+  runs        Run[]
+}
+
+model Run {
+  id            String   @id @default(cuid())
+  projectId     String
+  flowId        String?
+  status        String
+  startedAt     DateTime @default(now())
+  endedAt       DateTime?
+  durationMs    Int?
+  errorSummary  String?
+  repairApplied Boolean  @default(false)
+  repairSummary String?
+  artifacts     Json?
+  logs          Json?
+  project       Project  @relation(fields: [projectId], references: [id])
+  flow          Flow?    @relation(fields: [flowId], references: [id])
+}
+
+model RepairAttempt {
+  id            String   @id @default(cuid())
+  runId         String
+  failureType   String
+  originalCode  String
+  repairedCode  String
+  explanation   String
+  confidence    Float
+  createdAt     DateTime @default(now())
+}

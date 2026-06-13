@@ -1,0 +1,23 @@
+{
+  "name": "autoheal-browser-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-powered self-healing browser automation platform",
+  "scripts": {
+    "dev": "concurrently "pnpm --filter web dev" "pnpm --filter api dev" "pnpm --filter demo-site dev"",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "db:push": "pnpm --filter api prisma:push",
+    "playwright:install": "pnpm exec playwright install --with-deps"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "concurrently": "latest",
+    "typescript": "latest"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@9.0.0"
+}
