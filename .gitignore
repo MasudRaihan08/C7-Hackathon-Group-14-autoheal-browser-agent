@@ -1,6 +1,28 @@
+node_modules
+.pnpm-store
+.next
+dist
+coverage
+
+# Environment / secrets
 .env
 .env.local
 .env.*.local
 *.pem
 *.key
 *.secret
+
+# Database
+*.db
+*.sqlite
+
+# Runtime artifacts
+artifacts/*
+!artifacts/.gitkeep
+playwright-report
+test-results
+
+# OS / editor
+.DS_Store
+.vscode
+.idea
