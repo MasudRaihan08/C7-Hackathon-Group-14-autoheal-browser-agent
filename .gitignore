@@ -1,38 +1,27 @@
-node_modules
-.pnpm-store
-.next
-dist
-coverage
-<<<<<<< HEAD
-.env
-.env.local
-*.db
-*.sqlite
-=======
-
-# Environment / secrets
+# Secrets
 .env
 .env.local
 .env.*.local
+apps/api-python/.env
+apps/streamlit-ui/.env
 *.pem
 *.key
 *.secret
 
-# Database
-*.db
-*.sqlite
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Node
+node_modules
+.next
+dist
 
 # Runtime artifacts
->>>>>>> 9e3be05a96cf8fed0a31d797a816fbd46235f328
 artifacts/*
 !artifacts/.gitkeep
 playwright-report
 test-results
-<<<<<<< HEAD
-=======
-
-# OS / editor
->>>>>>> 9e3be05a96cf8fed0a31d797a816fbd46235f328
-.DS_Store
-.vscode
-.idea
