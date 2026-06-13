@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+pydantic
+pydantic-settings
+playwright
+pytest
+pytest-playwright
+langchain
+langchain-core
+langchain-community
+langchain-openrouter
+langgraph
+langsmith
+requests
+pandas
