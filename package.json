@@ -4,7 +4,7 @@
   "private": true,
   "description": "AI-powered self-healing browser automation platform",
   "scripts": {
-    "dev": "concurrently "pnpm --filter web dev" "pnpm --filter api dev" "pnpm --filter demo-site dev"",
+    "dev": "concurrently \"pnpm --filter web dev\" \"pnpm --filter api dev\" \"pnpm --filter demo-site dev\"",
     "build": "pnpm -r build",
     "lint": "pnpm -r lint",
     "test": "pnpm -r test",
