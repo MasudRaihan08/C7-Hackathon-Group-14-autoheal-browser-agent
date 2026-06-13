@@ -3,14 +3,36 @@ node_modules
 .next
 dist
 coverage
+<<<<<<< HEAD
 .env
 .env.local
 *.db
 *.sqlite
+=======
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.secret
+
+# Database
+*.db
+*.sqlite
+
+# Runtime artifacts
+>>>>>>> 9e3be05a96cf8fed0a31d797a816fbd46235f328
 artifacts/*
 !artifacts/.gitkeep
 playwright-report
 test-results
+<<<<<<< HEAD
+=======
+
+# OS / editor
+>>>>>>> 9e3be05a96cf8fed0a31d797a816fbd46235f328
 .DS_Store
 .vscode
 .idea
